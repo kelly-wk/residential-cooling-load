@@ -1,0 +1,17 @@
+# Units: conductivity W/(m K), thickness m, U-value W/(m2 K), area m2.
+material Concrete 1.6
+material GypsumBoard 0.22
+material Styren 0.03
+layers RC Concrete 0.15
+layers RCwStyren Concrete 0.15 Styren 0.05
+window single6 6.2 0.82
+awall RCwStyren H 0.4 16
+awall RCwStyren S 0.4 6
+awall RCwStyren W 0.4 12
+awall RCwStyren N 0.4 12
+awall RCwStyren E 0.4 12
+awall RCwStyren P 0.4 16
+awindow single6 S 6
+again 200
+# avent room_volume_m3 air_changes_per_hour
+avent 48 0.5

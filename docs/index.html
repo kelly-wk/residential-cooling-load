@@ -3,95 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#9A6A31">
-  <meta name="description" content="An all-zero cooling-load pipeline repaired into an educational model with unit contracts, component breakdowns, and conservation tests.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="住宅の時間別冷房負荷モデル / Hourly Residential Cooling-Load Model">
-  <meta property="og:description" content="An all-zero cooling-load pipeline repaired into an educational model with unit contracts, component breakdowns, and conservation tests.">
-  <meta property="og:url" content="https://kelly-wk.github.io/residential-cooling-load/">
-  <meta property="og:image" content="https://kelly-wk.github.io/residential-cooling-load/social-preview.svg">
+  <meta name="description" content="Colab evidence repaired into an auditable educational model of hourly residential sensible loads.">
   <title>住宅の時間別冷房負荷モデル / Hourly Residential Cooling-Load Model</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="tier-public_case_study" style="--accent:#9A6A31;--accent-dark:#252A32;--accent-soft:#F3ECE1;--hero-start:#252A32">
-  <a class="skip-link" href="#content">本文へ / Skip to content</a>
-  <header class="project-hero">
-    <div class="hero-inner">
-      <div class="hero-topline">
-        <div class="eyebrow">
-          <span>計算工学・建築テック / Computational Engineering &amp; Built Environment</span>
-        </div>
-        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
-      </div>
-      <h1><span lang="ja">住宅の時間別冷房負荷モデル</span><span lang="en">Hourly Residential Cooling-Load Model</span></h1>
-      <div class="hero-summary">
-        <div class="copy-pair lede"><p lang="ja">ゼロ出力だった熱負荷計算を、単位契約・成分分解・保存則テストを備えた教育モデルへ修復。</p><p class="translation" lang="en">An all-zero cooling-load pipeline repaired into an educational model with unit contracts, component breakdowns, and conservation tests.</p></div>
-        <div class="hero-facts">
-          <dl class="project-meta">
-            <div><dt>状態 / Status</dt><dd><span lang="ja">教育モデル修復済み・データ由来結果非公開</span><span lang="en">Educational model repaired · source-derived results withheld</span></dd></div>
-            <div><dt>言語 / Language</dt><dd>Python</dd></div>
-          </dl>
-        </div>
-      </div>
-      <div class="method-block">
-        <p class="method-label">技術スタック / Tech Stack</p>
-        <ul class="method-list" aria-label="Methods"><li>Python standard library</li><li>Heat-balance modeling</li><li>Unit-aware configuration</li><li>Conservation tests</li><li>Golden tests</li><li>Scenario analysis</li></ul>
-      </div>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">計算工学・建築環境 / Computational Engineering &amp; Built Environment</p>
+      <h1><span class="ja">住宅の時間別<wbr>冷房負荷モデル</span><span class="en" lang="en">Hourly Residential Cooling-Load Model</span></h1>
+      <p class="lede copy">断片的な 4 本の Colab を、成分別に監査できる定常顕熱モデルへ修復。<span class="en" lang="en">Four fragmented Colab records repaired into an auditable steady-state sensible-load model.</span></p>
+      <p class="status">教育課題の修復 / Coursework reconstruction</p>
     </div>
   </header>
 
-  <main id="content" class="shell">
-    
-    <section aria-labelledby="highlights-title">
-      <div class="section-heading"><p>01</p><h2 id="highlights-title">主なポイント <span lang="en">Highlights</span></h2></div>
-      <div class="highlight-grid"><article class="highlight">
-          <span class="highlight-number" aria-hidden="true">1</span>
-          <div class="copy-pair"><p lang="ja">全時刻ゼロだった計算経路を修復し、非ゼロの負荷成分を追跡可能にした。</p><p class="translation" lang="en">Repaired an all-zero computation path and made nonzero load components traceable.</p></div>
-        </article><article class="highlight">
-          <span class="highlight-number" aria-hidden="true">2</span>
-          <div class="copy-pair"><p lang="ja">壁・窓・換気・内部発熱などを透明に分解し、入出力単位を設定で明示。</p><p class="translation" lang="en">Exposed wall, window, ventilation, and internal-gain components with explicit input/output units.</p></div>
-        </article><article class="highlight">
-          <span class="highlight-number" aria-hidden="true">3</span>
-          <div class="copy-pair"><p lang="ja">エネルギーバランスと手計算ゴールデンケースで、主要式の整合性を検証。</p><p class="translation" lang="en">Checked core equations with energy-balance assertions and hand-calculated golden cases.</p></div>
-        </article></div>
-    </section>
-
-    <section aria-labelledby="flow-title">
-      <div class="section-heading"><p>02</p><h2 id="flow-title">研究の流れ <span lang="en">Research Flow</span></h2></div>
-      <ol class="flow-grid"><li class="flow-card" data-step="1">
-              <h3><span lang="ja">課題</span><span lang="en">Problem</span></h3>
-              <div class="copy-pair"><p lang="ja">無効なゼロ出力を検出・修復し、時間別冷房負荷の計算根拠を監査可能にする。</p><p class="translation" lang="en">Detect and repair invalid zero output while making hourly cooling-load calculations auditable.</p></div>
-            </li><li class="flow-card" data-step="2">
-              <h3><span lang="ja">方法</span><span lang="en">Method</span></h3>
-              <div class="copy-pair"><p lang="ja">簡略熱収支を成分別に実装し、単位付き設定とシナリオ入力で駆動する。</p><p class="translation" lang="en">Implement a simplified component-wise heat balance driven by unit-aware configuration and scenarios.</p></div>
-            </li><li class="flow-card" data-step="3">
-              <h3><span lang="ja">検証</span><span lang="en">Validation</span></h3>
-              <div class="copy-pair"><p lang="ja">保存則、符号、手計算値、境界条件をテストし、成分合計と総負荷を照合する。</p><p class="translation" lang="en">Test conservation, signs, hand calculations, and boundary cases, reconciling component sums with total load.</p></div>
-            </li><li class="flow-card" data-step="4">
-              <h3><span lang="ja">成果</span><span lang="en">Outcome</span></h3>
-              <div class="copy-pair"><p lang="ja">説明可能な教育用プロトタイプへ修復したが、設計用計算としては位置付けない。</p><p class="translation" lang="en">Repaired the pipeline into an explainable educational prototype, not a design-calculation tool.</p></div>
-            </li></ol>
-    </section>
-
-    <section class="limitations" aria-labelledby="limits-title">
-      <div class="section-heading"><p>03</p><h2 id="limits-title">限界と適用範囲 <span lang="en">Limitations &amp; Scope</span></h2></div>
-      <ul><li><div class="copy-pair"><p lang="ja">気象表の来歴が未確認で、モデルも定常顕熱のみを扱うため、設備選定や法規適合には使用できない。</p><p class="translation" lang="en">Weather-table provenance is unconfirmed, and the model covers only steady sensible loads, so it is unsuitable for equipment sizing or code compliance.</p></div></li></ul>
-    </section>
-
-    <section class="publication" aria-labelledby="publication-title">
-      <div class="section-heading"><p>04</p><h2 id="publication-title">公開範囲 <span lang="en">Publication Boundary</span></h2></div>
-      <div class="publication-panel">
-        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
-        <div class="copy-pair"><p lang="ja">教育モデルの設計と検証は紹介可能だが、来歴未確認の気象データと派生結果は除外。</p><p class="translation" lang="en">The educational model and its checks can be described, while weather data of unclear provenance and derived results are excluded.</p></div>
+  <main class="wrap">
+    <section>
+      <h2><span>検証結果</span><span class="en" lang="en">Verified outcome</span></h2>
+      <div class="grid">
+        <article class="card"><strong>5 / 5</strong><small>自動テスト成功 / tests passed</small></article>
+        <article class="card"><strong>9</strong><small>負荷要素 / load elements</small></article>
+        <article class="card"><strong>3,491.187 W</strong><small>合成例のピーク / synthetic peak</small></article>
       </div>
-      <div class="cta-grid"><a class="cta" href="https://github.com/kelly-wk/residential-cooling-load"><strong lang="ja">リポジトリ</strong><span lang="en">Repository</span><span aria-hidden="true">↗</span></a><a class="cta" href="https://github.com/kelly-wk/residential-cooling-load/blob/main/CASE_STUDY.md"><strong lang="ja">レポート</strong><span lang="en">Report</span><span aria-hidden="true">↗</span></a><span class="cta is-disabled" aria-disabled="true"><strong lang="ja">再現手順</strong><span lang="en">Reproduce</span><small>この公開レベルでは利用できません / Not available at this publication tier</small></span></div>
+    </section>
+
+    <section>
+      <h2><span>修復の流れ</span><span class="en" lang="en">Repair flow</span></h2>
+      <div class="flow">
+        <article class="step"><b>01</b><h3>証拠 / Evidence</h3><p>保存セル、出力、エラーを 4 notebook で照合。</p></article>
+        <article class="step"><b>02</b><h3>診断 / Diagnosis</h3><p>欠落 module、indent、空リストによるゼロ出力を特定。</p></article>
+        <article class="step"><b>03</b><h3>再実装 / Repair</h3><p>単位契約、入力検証、5 成分の明細を実装。</p></article>
+        <article class="step"><b>04</b><h3>検証 / Validation</h3><p>手計算値、保存則、合成 end-to-end で確認。</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>合成夏季正午の成分</span><span class="en" lang="en">Synthetic summer-noon components</span></h2>
+      <div class="bars" aria-label="Synthetic component breakdown in watts">
+        <div class="bar"><span>窓日射 / Window solar</span><span class="track"><span class="fill" style="width:100%"></span></span><output>2,460.0 W</output></div>
+        <div class="bar"><span>壁 / Walls</span><span class="track"><span class="fill" style="width:19.1%"></span></span><output>469.2 W</output></div>
+        <div class="bar"><span>窓貫流 / Window conduction</span><span class="track"><span class="fill" style="width:12.1%"></span></span><output>297.6 W</output></div>
+        <div class="bar"><span>内部発熱 / Internal</span><span class="track"><span class="fill" style="width:8.1%"></span></span><output>200.0 W</output></div>
+        <div class="bar"><span>換気 / Ventilation</span><span class="track"><span class="fill" style="width:2.6%"></span></span><output>64.4 W</output></div>
+      </div>
+      <p class="note copy">この図は合成 fixture の計算確認です。実測気象による建物性能評価ではありません。<span class="en" lang="en">This chart validates a synthetic fixture; it is not a real-weather building-performance assessment.</span></p>
+    </section>
+
+    <section>
+      <h2><span>公開範囲</span><span class="en" lang="en">Publication boundary</span></h2>
+      <p class="copy">元の気象 CSV と `loadelement.py` は未回収のため配布せず、保存出力を実測結果として再利用していません。公開物はクリーンルーム修復コード、テスト、合成例、証拠対応表です。<span class="en" lang="en">The unavailable source weather CSV and module are not redistributed or represented as recovered results. The public scope is the clean-room repair, tests, synthetic fixture, and evidence map.</span></p>
+      <div class="links">
+        <a href="https://github.com/kelly-wk/residential-cooling-load">Repository</a>
+        <a href="https://github.com/kelly-wk/residential-cooling-load/blob/main/REPORT.md">Report</a>
+        <a href="https://github.com/kelly-wk/residential-cooling-load/blob/main/REPRODUCIBILITY.md">Reproduce</a>
+        <a href="https://github.com/kelly-wk/residential-cooling-load/blob/main/PROVENANCE.md">Provenance</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p><span lang="ja">公開レベルはページ上で常に明示されます。</span> <span lang="en">Publication tier is always shown explicitly.</span></p>
-    <p>kelly-wk · residential-cooling-load</p>
-  </footer>
+  <footer><div class="wrap">kelly-wk · residential-cooling-load · educational model</div></footer>
 </body>
 </html>
